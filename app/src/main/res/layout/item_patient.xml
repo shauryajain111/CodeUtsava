@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/white_40"
+    android:backgroundTint="@color/white_25"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <!-- Avatar -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/white_50"
+            android:backgroundTint="@color/white_90">
+
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_user"
+                app:tint="@color/teal_800" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Patient Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/tvPatientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sarah Mitchell"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPatientInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="34 • Female • Psoriasis"
+                android:textColor="@color/white_85"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Chevron Icon -->
+        <ImageView
+            android:id="@+id/ivChevron"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/white_80" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

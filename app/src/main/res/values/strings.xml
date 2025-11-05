@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SAGAlyze</string>
+    <string name="tagline">Clinician-Only Smart Dermatology Assistant</string>
+    <string name="sign_in">Sign in</string>
+    <string name="clinician_id">Clinician ID or Email</string>
+    <string name="password">Password</string>
+    <string name="secure_login">Secure Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="clinician_access">Clinician Access Only</string>
+
+    <string name="dashboard_title">SAGAlyze Dashboard</string>
+    <string name="dashboard_subtitle">Clinician Console</string>
+    <string name="welcome_message">Welcome, %1$s</string>
+    <string name="session_info_message">Email: %1$s\nLogged in: %2$s</string>
+    <string name="welcome_default">Welcome, Clinician</string>
+    <string name="session_placeholder">Loading session data...</string>
+
+</resources>

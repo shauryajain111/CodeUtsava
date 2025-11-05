@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootDashboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dashboard_gradient"
+    tools:context="com.sagalyze.ui.DashboardActivity">
+
+    <!-- 🔥 Added Floating Toolbar (no change to your original structure) -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarDashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="6dp"
+        app:navigationIcon="@drawable/ic_lock"
+        app:title=""
+        app:menu="@menu/dashboard_menu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║ SECTION 1: BRAND HEADER                                         ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+
+    <!-- Brand shield (tinted white, centered) -->
+    <ImageView
+        android:id="@+id/ivShield"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/ic_shield"
+        app:tint="@color/brand_on_teal"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="28dp" />
+
+    <!-- Brand title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAGAlyze"
+        android:textAppearance="@style/TextAppearance.SAGA.Title"
+        android:importantForAccessibility="yes"
+        android:accessibilityHeading="true"
+        app:layout_constraintTop_toBottomOf="@id/ivShield"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clinician Console"
+        android:textAppearance="@style/TextAppearance.SAGA.Subtitle"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp" />
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║ SECTION 2: SESSION SUMMARY (Glassmorphic Card)                  ║
+         ╚══════════════════════════════════════════════════════════════════╝
+         • Hidden by default while you’re in dev mode (no fake values).
+         • DashboardActivity can set visibility to VISIBLE when real session exists.
+    -->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/sessionCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="Session summary"
+        android:visibility="gone"
+        app:cardBackgroundColor="#11FFFFFF"
+        app:strokeColor="#33FFFFFF"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="18dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome, Clinician"
+                android:textAppearance="@style/TextAppearance.SAGA.Heading"
+                tools:text="Welcome, Dr. Rao" />
+
+            <TextView
+                android:id="@+id/tvSessionInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text=""
+                android:textAppearance="@style/TextAppearance.SAGA.BodyMuted"
+                tools:text="Email: dr.rao@saga.ai  •  Logged in: 02 Nov 2025, 09:42" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║ SECTION 3: ACTIONS                                              ║
+         ╚══════════════════════════════════════════════════════════════════╝
+         • Three primary CTAs: Lesion Tracker, Progress Analytics, Fairness Audit
+         • Rounded gradient buttons with white icons/text (match login CTA)
+    -->
+
+    <!-- Stack container for buttons -->
+    <LinearLayout
+        android:id="@+id/btnStack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/sessionCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvFooter"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="24dp">
+
+        <!-- CTA #1: Lesion Tracker -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLesionTracker"
+            style="@style/Widget.SAGA.CTAButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Lesion Tracker"
+            android:contentDescription="Open Lesion Tracker"
+            android:layout_marginBottom="14dp"
+            app:icon="@drawable/ic_camera"
+            app:iconGravity="textStart" />
+
+        <!-- CTA #2: Progress Analytics -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnProgressAnalytics"
+            style="@style/Widget.SAGA.CTAButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Progress Analytics"
+            android:contentDescription="Open Progress Analytics"
+            android:layout_marginBottom="14dp"
+            app:icon="@drawable/ic_gallery"
+            app:iconGravity="textStart" />
+
+        <!-- CTA #3: Fairness Audit -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFairnessAudit"
+            style="@style/Widget.SAGA.CTAButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Fairness Audit"
+            android:contentDescription="Open Fairness Audit"
+            app:icon="@drawable/ic_info"
+            app:iconGravity="textStart" />
+
+        <!-- Spacer for nicer bottom breathing room on tall displays -->
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="12dp" />
+    </LinearLayout>
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║ SECTION 4: FOOTER                                               ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="© 2025 SAGAlyze | Ethical AI for Clinicians"
+        android:textAppearance="@style/TextAppearance.SAGA.Footer"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║ SECTION 5: DECORATIVE/ACCESSIBILITY HELPERS                     ║
+         ╚══════════════════════════════════════════════════════════════════╝
+         Notes:
+         - You can add subtle particles / lottie behind content later.
+         - Keep content readable: contrast ratio considered with brand_on_teal.
+         - Icons are white; use vector drawables for crisp rendering on all DPIs.
+    -->
+
+    <!-- Invisible focus order helper (keeps TalkBack sane on entry) -->
+    <LinearLayout
+        android:id="@+id/accessibilityOrder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:importantForAccessibility="yes"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintTop_toTopOf="@id/ivShield"
+        app:layout_constraintStart_toStartOf="@id/ivShield"
+        app:layout_constraintEnd_toEndOf="@id/ivShield"
+        app:layout_constraintBottom_toBottomOf="@id/ivShield"
+        tools:ignore="UselessLeaf" />
+
+    <!-- Decorative: optional subtle divider under subtitle (disabled by default) -->
+    <View
+        android:id="@+id/decorDivider"
+        android:layout_width="72dp"
+        android:layout_height="2dp"
+        android:background="#33FFFFFF"
+        android:importantForAccessibility="no"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        tools:visibility="visible" />
+
+    <!-- ╔══════════════════════════════════════════════════════════════════╗
+         ║ SECTION 6: PLACEHOLDER/TOOLS PREVIEW                            ║
+         ╚══════════════════════════════════════════════════════════════════╝ -->
+
+    <!-- Tools-only previews so you can see the layout in the editor -->
+    <include
+        android:id="@+id/toolsPreviewData"
+        layout="@layout/tools_dashboard_preview"
+        android:visibility="gone"
+        tools:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

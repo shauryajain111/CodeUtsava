@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="brand_on_teal">#FFFFFF</color> <!-- pure white, visible on teal -->
+
+    <color name="white_translucent">#B3FFFFFF</color>
+    <color name="primaryText">#0A0A0A</color>
+    <color name="secondaryText">#6B7280</color>
+    <color name="ctaGradientStart">#00B2A9</color>
+
+    <color name="teal_900">#134e4a</color>
+    <color name="teal_800">#115e59</color>
+    <color name="teal_600">#0d9488</color>
+    <color name="teal_500">#14b8a6</color>
+    <color name="teal_400">#2dd4bf</color>
+
+    <color name="emerald_700">#047857</color>
+    <color name="emerald_600">#059669</color>
+    <color name="emerald_500">#10b981</color>
+    <color name="emerald_400">#34d399</color>
+    <color name="emerald_300">#6ee7b7</color>
+
+    <!-- White transparency variants for glassmorphism -->
+    <color name="white_90">#E6FFFFFF</color>
+    <color name="white_85">#D9FFFFFF</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_40">#66FFFFFF</color>
+    <color name="white_30">#4DFFFFFF</color>
+    <color name="white_25">#40FFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="white_15">#26FFFFFF</color>
+    <color name="white_10">#1AFFFFFF</color>
+
+    <!-- Chip background states -->
+    <color name="chip_background_default">#40FFFFFF</color>
+    <color name="chip_background_selected">#66FFFFFF</color>
+</resources>
