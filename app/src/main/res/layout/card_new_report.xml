@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CardStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_card">
+
+        <!-- Card Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_md"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/icon_size_normal"
+                android:layout_height="@dimen/icon_size_normal"
+                android:contentDescription="@string/new_report_title"
+                android:src="@drawable/ic_file_text"
+                app:tint="@color/primary_green" />
+
+            <TextView
+                style="@style/TextTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_sm"
+                android:text="@string/new_report_title" />
+        </LinearLayout>
+
+        <!-- Upload Skin Photo Section -->
+        <TextView
+            style="@style/TextLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_sm"
+            android:text="@string/label_upload_photo" />
+
+        <!-- Photo Upload Area -->
+        <FrameLayout
+            android:id="@+id/uploadArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_md"
+            android:background="@drawable/bg_upload_area"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:minHeight="150dp"
+            android:padding="@dimen/spacing_lg">
+
+            <!-- Upload Prompt (Visible when no file) -->
+            <LinearLayout
+                android:id="@+id/uploadPrompt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="@dimen/icon_size_xlarge"
+                    android:layout_height="@dimen/icon_size_xlarge"
+                    android:background="@color/background_main">
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_size_large"
+                        android:layout_height="@dimen/icon_size_large"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/button_browse_files"
+                        android:src="@drawable/ic_upload"
+                        app:tint="@color/primary_green" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:text="@string/drag_drop_text"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:text="@string/file_format_text"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_small" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBrowseFiles"
+                    style="@style/ButtonPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:drawableLeft="@drawable/ic_upload"
+                    android:drawablePadding="@dimen/spacing_sm"
+                    android:text="@string/button_browse_files" />
+            </LinearLayout>
+
+            <!-- File Selected View (Visible when file uploaded) -->
+            <LinearLayout
+                android:id="@+id/fileSelectedView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="@dimen/icon_size_xlarge"
+                    android:layout_height="@dimen/icon_size_xlarge"
+                    android:background="@drawable/bg_icon_circle">
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_size_large"
+                        android:layout_height="@dimen/icon_size_large"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/label_upload_photo"
+                        android:src="@drawable/ic_image"
+                        app:tint="@color/primary_green" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvFileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_normal"
+                    tools:text="skin_lesion.jpg" />
+
+                <TextView
+                    android:id="@+id/tvFileSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_small"
+                    tools:text="2.45 MB" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRemoveFile"
+                    style="@style/ButtonOutline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:text="@string/button_remove_file" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!-- Report Title Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilReportTitle"
+            style="@style/InputStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_md"
+            android:hint="@string/label_report_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etReportTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/report_title_hint"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Clinical Findings Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilClinicalFindings"
+            style="@style/InputStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_md"
+            android:hint="@string/label_clinical_findings">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etClinicalFindings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:hint="@string/clinical_findings_hint"
+                android:inputType="textMultiLine"
+                android:minHeight="100dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Treatment Recommendations Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTreatmentRecommendations"
+            style="@style/InputStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_md"
+            android:hint="@string/label_treatment_recommendations">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTreatmentRecommendations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:hint="@string/treatment_recommendations_hint"
+                android:inputType="textMultiLine"
+                android:minHeight="100dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGenerateReport"
+                style="@style/ButtonPrimary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_xs"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_file_text"
+                android:drawablePadding="@dimen/spacing_sm"
+                android:text="@string/button_generate_report" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDownloadPdf"
+                style="@style/ButtonOutline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_xs"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_download"
+                android:drawablePadding="@dimen/spacing_sm"
+                android:text="@string/button_download_pdf" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSendToPatient"
+                style="@style/ButtonOutline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_xs"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_send"
+                android:drawablePadding="@dimen/spacing_sm"
+                android:text="@string/button_send_to_patient" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,5 +1,6 @@
-package com.sagalyze.app
+package com.example.sagalyze.app
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,10 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sagalyze.R
-import com.example.sagalyze.app.Patient
+import com.example.sagalyze.report.ReportActivity
 
 class PatientAdapter(
-    private val patients: MutableList<Patient>, // ✅ changed from List<Patient> to MutableList<Patient>
+    private val patients: MutableList<Patient>, // ✅ MutableList so updateList works
     private val onPatientClick: (Patient) -> Unit
 ) : RecyclerView.Adapter<PatientAdapter.PatientViewHolder>() {
 
@@ -19,20 +20,33 @@ class PatientAdapter(
         val tvPatientInfo: TextView = itemView.findViewById(R.id.tvPatientInfo)
         val ivAvatar: ImageView = itemView.findViewById(R.id.ivAvatar)
         val ivChevron: ImageView = itemView.findViewById(R.id.ivChevron)
+        val eyeIcon: ImageView = itemView.findViewById(R.id.ivEye)
 
         fun bind(patient: Patient) {
             tvPatientName.text = patient.name
             tvPatientInfo.text = "${patient.age} • ${patient.gender} • ${patient.condition}"
 
+            // Whole item click (optional)
             itemView.setOnClickListener {
                 onPatientClick(patient)
+            }
+
+            // 👁️ Eye icon click → open ReportActivity
+            eyeIcon.setOnClickListener {
+                val context = itemView.context
+                val intent = Intent(context, ReportActivity::class.java).apply {
+                    putExtra("PATIENT_ID", patient.id)
+                    putExtra("PATIENT_NAME", patient.name)
+                    putExtra("PATIENT_CONDITION", patient.condition)
+                }
+                context.startActivity(intent)
             }
         }
     }
 
     fun updateList(newList: List<Patient>) {
-        patients.clear()           // ✅ works now because patients is MutableList
-        patients.addAll(newList)   // ✅ works now because patients is MutableList
+        patients.clear()
+        patients.addAll(newList)
         notifyDataSetChanged()
     }
 
@@ -43,8 +57,9 @@ class PatientAdapter(
     }
 
     override fun onBindViewHolder(holder: PatientViewHolder, position: Int) {
-        holder.bind(patients[position])
+        val patient = patients[position]
+        holder.bind(patient)
     }
 
-    override fun getItemCount(): Int = patients.size
+    override fun getItemCount(): Int = patients.size // ✅ Moved OUTSIDE onBindViewHolder()
 }

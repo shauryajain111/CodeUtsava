@@ -58,4 +58,41 @@
     <color name="chip_background_default">#40FFFFFF</color>
     <color name="chip_background_selected">#66FFFFFF</color>
 
+
+
+    <!-- Primary Green Theme -->
+    <color name="primary_green">#2E7D32</color>
+    <color name="primary_green_dark">#1B5E20</color>
+    <color name="primary_green_light">#4CAF50</color>
+
+    <!-- Secondary Green -->
+    <color name="secondary_green">#A5D6A7</color>
+    <color name="secondary_green_light">#C8E6C9</color>
+
+    <!-- Background Colors -->
+    <color name="background_main">#F1F8E9</color>
+    <color name="background_white">#FFFFFF</color>
+    <color name="background_card">#FFFFFF</color>
+
+    <!-- Text Colors -->
+<!--    <color name="text_primary">#1B1B1B</color>-->
+<!--    <color name="text_secondary">#1B1B1B99</color> &lt;!&ndash; 60% opacity &ndash;&gt;-->
+    <color name="text_tertiary">#1B1B1B66</color> <!-- 40% opacity -->
+    <color name="text_white">#FFFFFF</color>
+
+    <!-- Border Colors -->
+    <color name="border_color">#2E7D3233</color> <!-- 20% opacity -->
+    <color name="border_color_light">#2E7D321A</color> <!-- 10% opacity -->
+
+    <!-- Status Colors -->
+    <color name="status_improved">#4CAF50</color>
+    <color name="status_declined">#F44336</color>
+    <color name="status_stable">#9E9E9E</color>
+
+    <!-- Additional Colors -->
+    <color name="divider">#2E7D3226</color>
+    <color name="ripple_color">#2E7D321A</color>
+    <color name="shadow_color">#00000026</color>
+
 </resources>
+

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    package="com.example.sagalyze">
 
     <application
         android:name="com.sagalyze.App"
@@ -33,6 +33,11 @@
 
         <activity
             android:name="com.example.sagalyze.ui.PatientAddActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SAGAlyze" />
+
+        <activity
+            android:name="com.example.sagalyze.report.ReportActivity"
             android:exported="false"
             android:theme="@style/Theme.SAGAlyze" />
 

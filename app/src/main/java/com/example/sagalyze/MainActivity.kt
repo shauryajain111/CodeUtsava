@@ -19,6 +19,7 @@ import com.google.android.material.search.SearchBar
 import com.google.android.material.textfield.TextInputEditText
 import android.content.Intent
 import com.example.sagalyze.ui.PatientAddActivity
+import com.example.sagalyze.app.PatientAdapter
 
 class MainActivity : AppCompatActivity() {
 

@@ -6,4 +6,61 @@
     <dimen name="text_small">12sp</dimen>
     <dimen name="text_medium">16sp</dimen>
     <dimen name="text_large">20sp</dimen>
+
+
+    <!-- Spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="padding_card">16dp</dimen>
+    <dimen name="padding_screen">16dp</dimen>
+    <dimen name="padding_item">12dp</dimen>
+
+    <!-- Margin -->
+    <dimen name="margin_card">8dp</dimen>
+    <dimen name="margin_item">8dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">20sp</dimen>
+    <dimen name="text_size_title">24sp</dimen>
+
+    <!-- Icon Sizes -->
+    <dimen name="icon_size_small">20dp</dimen>
+    <dimen name="icon_size_normal">24dp</dimen>
+    <dimen name="icon_size_large">32dp</dimen>
+    <dimen name="icon_size_xlarge">48dp</dimen>
+
+    <!-- Corner Radius -->
+    <dimen name="corner_radius_small">4dp</dimen>
+    <dimen name="corner_radius_normal">8dp</dimen>
+    <dimen name="corner_radius_large">12dp</dimen>
+    <dimen name="corner_radius_xlarge">16dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_card">2dp</dimen>
+    <dimen name="elevation_button">4dp</dimen>
+
+    <!-- Button -->
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_min_width">120dp</dimen>
+
+    <!-- Avatar / Circle -->
+    <dimen name="avatar_size_small">40dp</dimen>
+    <dimen name="avatar_size_normal">48dp</dimen>
+    <dimen name="avatar_size_large">64dp</dimen>
+
+    <!-- Border -->
+    <dimen name="border_width">1dp</dimen>
+    <dimen name="border_width_thick">2dp</dimen>
+
+    <!-- Navigation Header -->
+    <dimen name="nav_header_height">180dp</dimen>
 </resources>

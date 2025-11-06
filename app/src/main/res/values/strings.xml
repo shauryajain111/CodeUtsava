@@ -84,4 +84,98 @@
         <item>Suspicious Lesion</item>
     </string-array>
 
+
+    <!-- Header -->
+    <string name="logged_in_as">Logged in as</string>
+    <string name="doctor_name">Dr. Sarah Mitchell</string>
+
+    <!-- Navigation -->
+    <string name="back_to_patient_records">Back to Patient Records</string>
+
+    <!-- Patient Header -->
+    <string name="patient_id_label">Patient ID:</string>
+
+    <!-- Page Title -->
+    <string name="page_title">Patient Data Entry</string>
+    <string name="page_description">Review patient details and upload the skin lesion photo for AI diagnosis.</string>
+
+    <!-- Patient Details Card -->
+    <string name="patient_details_title">Patient Details</string>
+    <string name="label_full_name">Full Name</string>
+    <string name="label_age">Age</string>
+    <string name="label_gender">Gender</string>
+    <string name="label_phone_number">Phone Number</string>
+    <string name="label_blood_group">Blood Group</string>
+    <string name="age_format">%d years</string>
+
+    <!-- Symptoms Card -->
+    <string name="symptoms_title">Current Symptoms</string>
+    <string name="add_symptom_hint">Add a new symptom…</string>
+    <string name="button_add">Add</string>
+
+    <!-- Past Visits Card -->
+    <string name="past_visits_title">Past Visits History</string>
+    <string name="column_visit_date">Visit Date</string>
+    <string name="column_diagnosis">Diagnosis</string>
+    <string name="column_action">Action</string>
+    <string name="button_full_report">Full Report</string>
+    <string name="no_past_visits">No past visits recorded for this patient.</string>
+
+    <!-- Progress Chart -->
+    <string name="progress_chart_title">Progress Over Time</string>
+    <string name="chart_x_axis">Visit Date</string>
+    <string name="chart_y_axis">Progress (%)</string>
+
+    <!-- Patient Info Card -->
+    <string name="patient_info_title">Visit Information</string>
+    <string name="label_previous_visit">Previous Visit</string>
+    <string name="label_next_visit">Next Scheduled Visit</string>
+    <string name="select_date">Select Date</string>
+
+    <!-- New Report Card -->
+    <string name="new_report_title">New Medical Report</string>
+    <string name="label_upload_photo">Upload Skin Photo</string>
+    <string name="drag_drop_text">Drag and Drop or Browse</string>
+    <string name="file_format_text">JPG, PNG, or HEIC formats under 5 MB</string>
+    <string name="button_browse_files">Browse Files</string>
+    <string name="button_remove_file">Remove File</string>
+    <string name="file_size_format">%.2f MB</string>
+
+    <string name="label_report_title">Report Title</string>
+    <string name="report_title_hint">e.g., Dermatological Assessment - November 2025</string>
+
+    <string name="label_clinical_findings">Clinical Findings</string>
+    <string name="clinical_findings_hint">Document your observations and clinical findings…</string>
+
+    <string name="label_treatment_recommendations">Treatment Recommendations</string>
+    <string name="treatment_recommendations_hint">Enter treatment plan and recommendations…</string>
+
+    <string name="button_generate_report">Generate Report</string>
+    <string name="button_download_pdf">Download PDF</string>
+    <string name="button_send_to_patient">Send to Patient</string>
+
+    <!-- Action Buttons -->
+    <string name="button_save_info">Save Info</string>
+    <string name="button_clear_all">Clear All</string>
+
+    <!-- Toast Messages -->
+    <string name="toast_navigation">Returning to patient records list…</string>
+    <string name="toast_saved">Patient data for %s has been saved successfully.</string>
+    <string name="toast_cleared">All fields have been reset.</string>
+    <string name="toast_report_title_missing">Please enter a report title.</string>
+    <string name="toast_photo_missing">Please upload a skin photo for the report.</string>
+    <string name="toast_report_generated">Medical report has been created successfully.</string>
+    <string name="toast_downloading_report">Report PDF is being generated…</string>
+    <string name="toast_report_sent">Report has been sent to the patient via email/SMS.</string>
+    <string name="toast_opening_report">Loading detailed report for visit on %s…</string>
+
+    <!-- Menu Items -->
+    <string name="menu_patient_records">Patient Records</string>
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_section_account">Account</string>
+
+    <string name="app_subtitle">Dermatology Assistant</string>
+
 </resources>
