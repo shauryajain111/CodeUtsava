@@ -10,7 +10,7 @@ import com.example.sagalyze.R
 import com.example.sagalyze.app.Patient
 
 class PatientAdapter(
-    private val patients: List<Patient>,
+    private val patients: MutableList<Patient>, // ✅ changed from List<Patient> to MutableList<Patient>
     private val onPatientClick: (Patient) -> Unit
 ) : RecyclerView.Adapter<PatientAdapter.PatientViewHolder>() {
 
@@ -28,6 +28,12 @@ class PatientAdapter(
                 onPatientClick(patient)
             }
         }
+    }
+
+    fun updateList(newList: List<Patient>) {
+        patients.clear()           // ✅ works now because patients is MutableList
+        patients.addAll(newList)   // ✅ works now because patients is MutableList
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PatientViewHolder {

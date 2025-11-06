@@ -31,5 +31,11 @@
             android:name="com.sagalyze.app.MainActivity"
             android:exported="true" />
 
+        <activity
+            android:name="com.example.sagalyze.ui.PatientAddActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SAGAlyze" />
+
+
     </application>
 </manifest>

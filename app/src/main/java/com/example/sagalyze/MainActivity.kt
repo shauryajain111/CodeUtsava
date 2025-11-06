@@ -17,55 +17,8 @@ import com.google.android.material.chip.Chip
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.search.SearchBar
 import com.google.android.material.textfield.TextInputEditText
-
-//
-//import android.os.Bundle
-//import androidx.activity.ComponentActivity
-//import androidx.activity.compose.setContent
-//import androidx.activity.enableEdgeToEdge
-//import androidx.compose.foundation.layout.fillMaxSize
-//import androidx.compose.foundation.layout.padding
-//import androidx.compose.material3.Scaffold
-//import androidx.compose.material3.Text
-//import androidx.compose.runtime.Composable
-//import androidx.compose.ui.Modifier
-//import androidx.compose.ui.tooling.preview.Preview
-//import com.example.sagalyze.ui.theme.SAGAlyzeTheme
-//
-//class MainActivity : ComponentActivity() {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
-//        setContent {
-//            SAGAlyzeTheme {
-//                Scaffold(modifier=Modifier.fillMaxSize()) { innerPadding ->
-//                    Greeting(
-//                        name="Android",
-//                        modifier=Modifier.padding(innerPadding)
-//                    )
-//                }
-//            }
-//        }
-//    }
-//}
-//
-//@Composable
-//fun Greeting(name: String, modifier: Modifier=Modifier) {
-//    Text(
-//        text="Hello $name!",
-//        modifier=modifier
-//    )
-//}
-//
-//@Preview(showBackground=true)
-//@Composable
-//fun GreetingPreview() {
-//    SAGAlyzeTheme {
-//        Greeting("Android")
-//    }
-//}
-
-
+import android.content.Intent
+import com.example.sagalyze.ui.PatientAddActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -76,7 +29,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var chipGender: Chip
     private lateinit var chipCondition: Chip
     private lateinit var chipSort: Chip
-    private lateinit var fab: FloatingActionButton
+
+    private lateinit var fabAddPatient: FloatingActionButton
+
     private lateinit var backgroundView: View
 
     private val allPatients = listOf(
@@ -109,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         chipGender = findViewById(R.id.chipGender)
         chipCondition = findViewById(R.id.chipCondition)
         chipSort = findViewById(R.id.chipSort)
-        fab = findViewById(R.id.fabAddPatient)
+        fabAddPatient = findViewById(R.id.fabAddPatient)
         backgroundView = findViewById(R.id.animatedBackground)
     }
 
@@ -144,44 +99,85 @@ class MainActivity : AppCompatActivity() {
     private fun setupFilterChips() {
         chipAge.setOnClickListener {
             chipAge.isChecked = !chipAge.isChecked
-            Toast.makeText(this, "Age filter toggled", Toast.LENGTH_SHORT).show()
+            if (chipAge.isChecked) {
+                filteredPatients.sortBy { it.age }
+            } else {
+                filteredPatients = allPatients.toMutableList()
+            }
+            patientAdapter.updateList(filteredPatients)
+            Toast.makeText(this, "Sorted by Age", Toast.LENGTH_SHORT).show()
         }
 
         chipGender.setOnClickListener {
             chipGender.isChecked = !chipGender.isChecked
-            Toast.makeText(this, "Gender filter toggled", Toast.LENGTH_SHORT).show()
+            if (chipGender.isChecked) {
+                filteredPatients.sortBy { it.gender.lowercase() }
+            } else {
+                filteredPatients = allPatients.toMutableList()
+            }
+            patientAdapter.updateList(filteredPatients)
+            Toast.makeText(this, "Sorted by Gender", Toast.LENGTH_SHORT).show()
         }
 
         chipCondition.setOnClickListener {
             chipCondition.isChecked = !chipCondition.isChecked
-            Toast.makeText(this, "Condition filter toggled", Toast.LENGTH_SHORT).show()
+            if (chipCondition.isChecked) {
+                filteredPatients.sortBy { it.condition.lowercase() }
+            } else {
+                filteredPatients = allPatients.toMutableList()
+            }
+            patientAdapter.updateList(filteredPatients)
+            Toast.makeText(this, "Sorted by Condition", Toast.LENGTH_SHORT).show()
         }
 
         chipSort.setOnClickListener {
             chipSort.isChecked = !chipSort.isChecked
-            Toast.makeText(this, "Sort filter toggled", Toast.LENGTH_SHORT).show()
+            val sortedList = if (chipSort.isChecked) {
+                filteredPatients.sortedBy { it.name.lowercase() }        // ✅ FIXED: use a sorted copy
+            } else {
+                filteredPatients.sortedByDescending { it.name.lowercase() } // ✅ FIXED
+            }
+            patientAdapter.updateList(sortedList.toMutableList())         // ✅ FIXED: pass a new list
+            Toast.makeText(this, "Sorted by Name", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun setupFAB() {
-        fab.setOnClickListener {
-            Toast.makeText(this, "Add New Patient", Toast.LENGTH_SHORT).show()
+        fabAddPatient.setOnClickListener {
+            val intent = Intent(this, PatientAddActivity::class.java)
+            startActivity(intent)
         }
     }
 
+
     private fun filterPatients(query: String) {
         filteredPatients.clear()
+
         if (query.isEmpty()) {
             filteredPatients.addAll(allPatients)
         } else {
             filteredPatients.addAll(
-                allPatients.filter {
-                    it.name.contains(query, ignoreCase = true)
+                allPatients.filter { patient ->
+                    patient.name.contains(query, ignoreCase = true) ||
+                            patient.age.toString().contains(query, ignoreCase = true) ||
+                            patient.gender.contains(query, ignoreCase = true) ||
+                            patient.condition.contains(query, ignoreCase = true)
                 }
             )
         }
+
+        // ✅ Ensure current sorting chip is respected during search
+        when {
+            chipAge.isChecked -> filteredPatients.sortBy { it.age }
+            chipGender.isChecked -> filteredPatients.sortBy { it.gender.lowercase() }
+            chipCondition.isChecked -> filteredPatients.sortBy { it.condition.lowercase() }
+            chipSort.isChecked -> filteredPatients.sortBy { it.name.lowercase() }
+        }
+
         patientAdapter.notifyDataSetChanged()
     }
+
+
 
     private fun startBackgroundAnimation() {
         // Animate gradient background with parallax effect
@@ -198,4 +194,5 @@ class MainActivity : AppCompatActivity() {
 
         animator.start()
     }
+
 }

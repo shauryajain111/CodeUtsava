@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Core Material Colors -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,40 +9,53 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="brand_on_teal">#FFFFFF</color> <!-- pure white, visible on teal -->
 
-    <color name="white_translucent">#B3FFFFFF</color>
-    <color name="primaryText">#0A0A0A</color>
-    <color name="secondaryText">#6B7280</color>
-    <color name="ctaGradientStart">#00B2A9</color>
+    <!-- Brand Accent -->
+    <color name="brand_on_teal">#FFFFFF</color> <!-- Pure white text on teal -->
 
-    <color name="teal_900">#134e4a</color>
-    <color name="teal_800">#115e59</color>
-    <color name="teal_600">#0d9488</color>
-    <color name="teal_500">#14b8a6</color>
-    <color name="teal_400">#2dd4bf</color>
+    <!-- Text Colors -->
+    <color name="text_primary">#0A0A0A</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#9E9E9E</color>
 
+    <!-- Primary Green Palette -->
+    <color name="light_green">#4CAF50</color>
+    <color name="dark_green">#2E7D32</color>
+    <color name="deep_green">#1B5E20</color>
+    <color name="gradient_green">#4CAF50</color>
+
+    <!-- Teal Palette (For accents or secondary UI) -->
+    <color name="teal_900">#134E4A</color>
+    <color name="teal_800">#115E59</color>
+    <color name="teal_600">#0D9488</color>
+    <color name="teal_500">#14B8A6</color>
+    <color name="teal_400">#2DD4BF</color>
+
+    <!-- Emerald Palette -->
     <color name="emerald_700">#047857</color>
     <color name="emerald_600">#059669</color>
-    <color name="emerald_500">#10b981</color>
-    <color name="emerald_400">#34d399</color>
-    <color name="emerald_300">#6ee7b7</color>
+    <color name="emerald_500">#10B981</color>
+    <color name="emerald_400">#34D399</color>
+    <color name="emerald_300">#6EE7B7</color>
 
-    <!-- White transparency variants for glassmorphism -->
+    <!-- Backgrounds -->
+    <color name="background_light_green">#F9FFF9</color>
+    <color name="card_background_green">#E8F5E9</color>
+    <color name="edittext_background">#F1F8E9</color>
+
+    <!-- Borders -->
+    <color name="border_green">#C8E6C9</color>
+    <color name="border_light_green">#A5D6A7</color>
+
+    <!-- Transparency for Glassmorphism -->
     <color name="white_90">#E6FFFFFF</color>
-    <color name="white_85">#D9FFFFFF</color>
     <color name="white_80">#CCFFFFFF</color>
-    <color name="white_70">#B3FFFFFF</color>
     <color name="white_60">#99FFFFFF</color>
-    <color name="white_50">#80FFFFFF</color>
     <color name="white_40">#66FFFFFF</color>
-    <color name="white_30">#4DFFFFFF</color>
-    <color name="white_25">#40FFFFFF</color>
     <color name="white_20">#33FFFFFF</color>
-    <color name="white_15">#26FFFFFF</color>
-    <color name="white_10">#1AFFFFFF</color>
 
-    <!-- Chip background states -->
+    <!-- Chips -->
     <color name="chip_background_default">#40FFFFFF</color>
     <color name="chip_background_selected">#66FFFFFF</color>
+
 </resources>

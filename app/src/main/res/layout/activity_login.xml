@@ -112,7 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sign_in"
-                android:textColor="@color/primaryText"
+                android:textColor="@color/text_primary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -147,7 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="16dp"
-                android:backgroundTint="@color/ctaGradientStart"
+                android:backgroundTint="@color/deep_green"
                 android:text="@string/secure_login"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
@@ -169,7 +169,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:textColor="@color/white_translucent"
+        android:textColor="@color/white_20"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/loginCard" />

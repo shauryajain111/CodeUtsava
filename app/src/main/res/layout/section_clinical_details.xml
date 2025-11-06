@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="24dp">
+
+    <!-- Section Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/clinical_details"
+        android:textColor="@color/deep_green"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium" />
+
+    <!-- Card Container -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/card_background_green"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp"
+        app:strokeColor="@color/border_green"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Primary Complaint -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/primary_complaint"
+                android:textColor="@color/dark_green"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-medium"
+                android:drawableStart="@drawable/ic_file_text"
+                android:drawableTint="@color/light_green"
+                android:drawablePadding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/et_primary_complaint"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"
+                android:hint="@string/primary_complaint_hint"
+                android:textColorHint="@color/text_secondary"
+                android:textColor="@color/text_primary"
+                android:gravity="top|start"
+                android:inputType="textMultiLine" />
+
+            <!-- Affected Areas -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/affected_areas"
+                android:textColor="@color/dark_green"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-medium"
+                android:drawableStart="@drawable/ic_map_pin"
+                android:drawableTint="@color/light_green"
+                android:drawablePadding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/et_affected_areas"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"
+                android:hint="@string/affected_areas_hint"
+                android:textColorHint="@color/text_secondary"
+                android:textColor="@color/text_primary"
+                android:gravity="top|start"
+                android:inputType="textMultiLine" />
+
+            <!-- Symptoms & Duration -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/symptoms_and_duration"
+                android:textColor="@color/dark_green"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-medium"
+                android:drawableStart="@drawable/ic_activity"
+                android:drawableTint="@color/light_green"
+                android:drawablePadding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/et_symptoms_and_duration"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"
+                android:hint="@string/symptoms_duration_hint"
+                android:textColorHint="@color/text_secondary"
+                android:textColor="@color/text_primary"
+                android:gravity="top|start"
+                android:inputType="textMultiLine" />
+
+            <!-- Previous Treatment Taken -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/previous_treatment"
+                android:textColor="@color/dark_green"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-medium"
+                android:drawableStart="@drawable/ic_pill"
+                android:drawableTint="@color/light_green"
+                android:drawablePadding="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/et_previous_treatment"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"
+                android:hint="@string/previous_treatment_hint"
+                android:textColorHint="@color/text_secondary"
+                android:textColor="@color/text_primary"
+                android:gravity="top|start"
+                android:inputType="textMultiLine" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

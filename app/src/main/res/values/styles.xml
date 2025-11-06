@@ -33,4 +33,46 @@
         <item name="iconTint">@color/white</item>
     </style>
 
+    <!-- ✅ Base Application Theme -->
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Brand colors -->
+        <item name="colorPrimary">@color/light_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/light_green</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- System UI colors -->
+        <item name="android:statusBarColor">@color/background_light_green</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Background -->
+        <item name="android:colorBackground">@color/background_light_green</item>
+
+        <!-- Material 3 surface override (fixes white flashes) -->
+        <item name="colorSurface">@color/background_light_green</item>
+        <item name="colorSurfaceVariant">@color/card_background_green</item>
+    </style>
+
+    <!-- ✅ TextInputLayout Style -->
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/light_green</item>
+        <item name="hintTextColor">@color/dark_green</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+    </style>
+
+    <!-- ✅ Button Styles -->
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">20dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Widget.App.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">20dp</item>
+        <item name="strokeColor">@color/light_green</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
 </resources>

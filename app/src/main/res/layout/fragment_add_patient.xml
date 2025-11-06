@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light_green"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Page Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="@string/add_new_patient"
+            android:textColor="@color/dark_green"
+            android:textSize="32sp"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- Section 1: Basic Information -->
+        <include layout="@layout/section_basic_information" />
+
+        <!-- Section 2: Clinical Details -->
+        <include layout="@layout/section_clinical_details" />
+
+        <!-- Section 3: Optional Attachments -->
+        <include layout="@layout/section_optional_attachments" />
+
+        <!-- Section 4: Diagnosis & Plan -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/diagnosis_plan"
+            android:textColor="@color/deep_green"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-medium" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_diagnosis_plan"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/add_diagnosis_plan"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            android:backgroundTint="@color/gradient_green"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/ic_stethoscope"
+            app:iconTint="@android:color/white"
+            app:iconGravity="textStart"
+            app:elevation="4dp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="32dp"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save_patient"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="@string/save_patient"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:backgroundTint="@color/gradient_green"
+                app:cornerRadius="20dp"
+                app:elevation="4dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="@string/cancel"
+                android:textColor="@color/dark_green"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:backgroundTint="@android:color/white"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/light_green"
+                app:strokeWidth="2dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

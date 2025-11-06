@@ -1,0 +1,12 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorControlNormal">
+
+    <!-- Activity heartbeat line -->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M22,12h-3.76l-1.83,-4.34a1,1 0 0,0 -1.84,0l-2.8,6.63 -1.63,-3.27a1,1 0 0,0 -1.79,0L6.76,12H2v2h5a1,1 0 0,0 .89,-.55l.83,-1.65 1.83,3.66a1,1 0 0,0 1.8,0l2.83,-6.68 1.83,4.33A1,1 0 0,0 18.24,14H22v-2z" />
+</vector>

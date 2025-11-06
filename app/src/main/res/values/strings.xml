@@ -1,18 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- App Info -->
     <string name="app_name">SAGAlyze</string>
     <string name="tagline">Clinician-Only Smart Dermatology Assistant</string>
-    <string name="sign_in">Sign in</string>
+
+    <!-- Login -->
+    <string name="sign_in">Sign In</string>
     <string name="clinician_id">Clinician ID or Email</string>
     <string name="password">Password</string>
     <string name="secure_login">Secure Login</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="clinician_access">Clinician Access Only</string>
 
+    <!-- Dashboard -->
     <string name="dashboard_title">SAGAlyze Dashboard</string>
     <string name="dashboard_subtitle">Clinician Console</string>
     <string name="welcome_message">Welcome, %1$s</string>
     <string name="session_info_message">Email: %1$s\nLogged in: %2$s</string>
     <string name="welcome_default">Welcome, Clinician</string>
     <string name="session_placeholder">Loading session data...</string>
+
+    <!-- Page Title -->
+    <string name="add_new_patient">Add New Patient</string>
+
+    <!-- Section Titles -->
+    <string name="basic_information">Basic Information</string>
+    <string name="clinical_details">Clinical Details</string>
+    <string name="optional_attachments">Optional Attachments</string>
+    <string name="diagnosis_plan">Diagnosis &amp; Plan</string>
+
+    <!-- Basic Information -->
+    <string name="patient_name">Patient Name</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="contact_number_optional">Contact Number (Optional)</string>
+    <string name="date_of_visit">Date of Visit</string>
+    <string name="category">Category</string>
+
+    <!-- Helper Text -->
+    <string name="full_legal_name">Full legal name as per records</string>
+<!--    <string name="auto_filled_date">Auto-filled with today's date</string>-->
+
+    <!-- Clinical Details -->
+    <string name="primary_complaint">Primary Complaint</string>
+    <string name="primary_complaint_hint">Describe the main reason for visit...</string>
+    <string name="affected_areas">Affected Areas</string>
+    <string name="affected_areas_hint">List body areas affected (e.g., face, arms, back)</string>
+    <string name="symptoms_and_duration">Symptoms &amp; Duration</string>
+    <string name="symptoms_duration_hint">Describe symptoms (itching, pain, burning, discharge, etc.) and duration (e.g., 2 weeks, 3 months)</string>
+    <string name="previous_treatment">Previous Treatment Taken</string>
+    <string name="previous_treatment_hint">List medications, creams, or treatments already tried</string>
+
+    <!-- Optional Attachments -->
+    <string name="upload_lesion_photo">Upload Lesion Photo</string>
+    <string name="tap_to_upload">Tap to upload image</string>
+    <string name="image_upload_info">PNG, JPG up to 10MB</string>
+    <string name="choose_file">Choose File</string>
+<!--    <string name="doctor_notes">Doctor's Notes / Remarks</string>-->
+    <string name="doctor_notes_hint">Additional observations or notes...</string>
+
+    <!-- Buttons -->
+    <string name="add_diagnosis_plan">Add Diagnosis &amp; Plan</string>
+    <string name="save_patient">Save Patient</string>
+    <string name="cancel">Cancel</string>
+    <string name="auto_filled_date">Auto fill today\'s date\n</string>
+
+    <!-- Gender Options -->
+    <string-array name="gender_options">
+        <item>Select</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Category Options -->
+    <string-array name="category_options">
+        <item>Select diagnosis category</item>
+        <item>Acne</item>
+        <item>Tinea</item>
+        <item>Vitiligo</item>
+        <item>Benign Nevus</item>
+        <item>Suspicious Lesion</item>
+    </string-array>
 
 </resources>
